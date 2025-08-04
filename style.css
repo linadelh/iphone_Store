@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin : 0 ; 
+    padding : 0 ;
+    font-family: sans-serif;
+     font-family: "Poppins", sans-serif;
+     font-weight: 500;
+     font-style: normal;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    background: black;
+    min-height: 100vh ;
+    width: 100% ;
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    display: flex ;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto ;
+    align-items: center;
+    padding: 20px 0 ;
+}
+
+.logo {
+    width: 40px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li a{
+   text-decoration: none ;
+   color: white;
+   margin: 0px 10px ;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+
+}
+
+.text {
+    width: 40%;
+    color: white;
+}
+
+.text h2 {
+    text-transform: uppercase;
+    font-size: 40px ;
+}
+
+.text p {
+    font-size: 18px ;
+    margin : 20px 0px ; 
+}
+
+.text a {
+    text-decoration: none ;
+    background: white;
+    color: black;
+    padding: 8px 15px ;
+    border-radius: 20px;
+}
+
+.content .image {
+    width: 30% ;
+}
+
+.content .image img {
+    width : 180px ;
+}
+
+.icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    translate:translateX(-50%) ;
+    
+}
+
+.icons img {
+    width: 40px ;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.icons img:hover {
+   transform: scale(1.2);
+}
+
+
+.phone {
+   display: flex ;
+   flex-wrap: wrap;
+   padding: 8px 70px ;
+   justify-content: center;
+   
+
+}
+.card {
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid rgb(189, 187, 187) ;
+    margin: auto ;
+    margin-top: 60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    transition: 0.6s ;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card img {
+    width: 80px ;
+}
+
+.price-phone {
+    display: flex ;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: rgb(220, 69, 69) ;
+    font-weight: 700;
+    
+}
+
+
+.promo {
+    padding-left: 20px;
+}
+
+.price-promo{
+     color: rgb(125, 124, 124);
+     text-decoration:line-through ; 
+}
+
+hr {
+    color: black;
+    width: 115%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.buy{
+    display: flex ;
+    justify-content: space-between;
+    margin-top: 15px ;
+    width: 100%;
+    align-items: center;
+}
+
+.buy a {
+    color : rgb(111, 109, 109) ;
+}
+
+.call {
+    display: flex ;
+
+}
+
+.call p {
+    padding-left: 11px ;
+    cursor: pointer;
+}
+
+#Product{
+    margin: 20px 45%;
+    margin-top: 90px ;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
