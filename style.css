@@ -29,6 +29,7 @@ header {
     margin: auto ;
     align-items: center;
     padding: 20px 0 ;
+    position: relative;
 }
 
 .logo {
@@ -193,4 +194,57 @@ hr {
     font-size: 40px;
     font-weight: 600;
 }
+
+.ton-panier {
+    position: absolute;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 12px 15px rgba(231, 227, 227, 0.2);
+    display: none; /* masqué par défaut */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 300px;
+    right: 5%;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}
+
+.ton-panier::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ton-panier::-webkit-scrollbar-thumb {
+  background-color: #888888;
+  border-radius: 10px;
+}
+
+.ton-panier::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ton-panier ul {
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+}
+
+.ton-panier ul li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.ton-panier img {
+    width: 50px;
+    border-radius: 6px ;
+}
+
+#trait-achat {
+    width: 100% ;
+    color: black;
+}
+
 
