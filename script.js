@@ -93,6 +93,9 @@ red.addEventListener("click" , function(){
     const panierDiv = document.getElementById("mon-panier");
      const produitUL = document.createElement("ul");
 
+     produitUL.setAttribute("data-nom", name);
+
+
     const liImage = document.createElement("li");
     liImage.innerHTML = `<img src="${src}" class="imago" />`;
 
@@ -113,15 +116,30 @@ red.addEventListener("click" , function(){
     produitUL.appendChild(liClose);
 
     panierDiv.appendChild(produitUL);
+
 }
 
 
     
-   document.getElementById("mon-panier").addEventListener("click", function(e) {
-  if (e.target.classList.contains("fermer-panier")) {
-    const ul = e.target.closest("ul");
-    if (ul) ul.remove();
-  }
-});
+  const sup = document.getElementById("mon-panier");
 
+ sup.addEventListener("click", function(e) {
+    if (e.target.classList.contains("fermer-panier")) {
+        const ul = e.target.closest("ul");
+        if (ul) {
+
+            const nom = ul.getAttribute("data-nom");
+             const toutesLesCards = document.querySelectorAll(".card");
+            toutesLesCards.forEach(card => {
+                const nomCard = card.querySelector(".phone-name").textContent;
+                if (nomCard === nom) {
+                    const icon = card.querySelector(".ajouter-panier i");
+                    icon.classList.remove("fa-circle-check");
+                    icon.classList.add("fa-cart-shopping");
+                }
+            });
+            ul.remove(); 
+        }
+    }
+});
 
