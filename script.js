@@ -138,7 +138,7 @@ red.addEventListener("click" , function(){
           const nom = ul.getAttribute("data-nom");
           const card = document.querySelectorAll(".card");
           card.forEach((car)=>{
-               const productname = car.querySelector(".phone-name").textContent ;
+               const productname = car.closest(".phone-name").textContent ;
                if(nom === productname){
                 const icon = car.querySelector(".ajouter-panier i");
                 icon.classList.remove("fa-circle-check");
@@ -149,4 +149,3 @@ red.addEventListener("click" , function(){
         }
     }
 });
-

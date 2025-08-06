@@ -271,3 +271,252 @@ hr {
 #shop {
      color: rgb(182, 119, 2);
 }
+
+.appeller {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 50px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  display: none; /* caché par défaut */
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-icons {
+    padding-top: 40px;
+    font-size: 30px;
+    display: inline-block ; 
+    /* t3od genre kol whda f block */
+    align-items: center;
+    justify-content: space-between;
+    padding-left: -20px;
+    width: 100%;
+}
+
+.contact-icons i {
+   padding-left: 45px;
+}
+
+.contact-icons i {
+    cursor: pointer;             /* Pour l'effet "cliquable" */
+    transition: transform 0.3s;  /* Animation au survol */
+}
+
+.contact-icons i:hover {
+    transform: scale(1.2);       /* Zoom au survol */
+}
+
+
+.bigcontact{
+    margin-top: 40px;
+}
+
+
+.about {
+  width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+
+}
+
+.aboutus {
+    margin: auto;
+}
+
+
+.aboutus span {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  color: #222;
+}
+
+.aboutus .info {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.share a {
+  margin-right: 15px;
+  display: inline-block;
+  color: #222;
+  transition: transform 0.2s;
+}
+
+.share a:hover {
+  transform: scale(1.2);
+  color: #007aff;
+}
+
+.aboutus button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007aff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.aboutus button:hover {
+  background-color: #005bb5;
+}
+
+.aboutus img {
+
+    border-radius: 10px ;
+    width: 60%;
+    padding-left: 0px;
+    border-radius: 80%;
+    border: 1px solid grey;
+    margin-left: 100px;
+    
+}
+
+.aboutus ul {
+
+  list-style-type: none;
+  padding-left: 10px;
+  color: #252222;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.aboutus ul li {
+    padding-top: 10px ;
+    text-align: center;
+    width: 80%;
+    border: 1px solid grey;
+    height: fit-content;
+    margin: 5px;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 30px;
+    background-color: #fffcfc;
+    transition: 0.7s;
+}
+
+.aboutus ul li:hover{
+   transform: scale(1.1);
+   background-color: #f5f2f2;
+}
+
+
+.bigcontact h2 {
+    margin: 30px 39%;
+    margin-top: 90px ;
+    margin-bottom: 5px;
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    width: 100%;
+    
+}
+
+
+/* From Uiverse.io by vinodjangid07 */ 
+.rating-card {
+  width: 300px;
+  height: fit-content ; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f0c29;
+  background: linear-gradient(to right bottom, #443e89, #0f0c29);
+  padding: 20px 20px;
+  border-radius: 10px;
+  gap: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.058);
+  margin-top:  100px ;
+  margin-left: 150px;
+  margin-bottom: 150px;
+}
+.text-wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.text-primary {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.text-secondary {
+  color: #cccccc;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.rating-stars-container {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.star-label svg {
+  fill: rgb(210, 210, 210);
+  width: 20px;
+  height: auto;
+}
+.rating-stars-container input {
+  appearance: unset;
+}
+.rating-stars-container input:hover ~ .star-label svg {
+  fill: rgb(255, 204, 185);
+}
+.rating-stars-container input:checked ~ .star-label svg {
+  fill: rgb(255, 102, 47);
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.socials-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(150, 150, 150);
+}
+.social-button {
+  text-decoration: none;
+}
+.social-button svg {
+  width: 15px;
+  fill: rgb(228, 228, 228);
+}
+.social-button:hover svg {
+  fill: rgb(255, 102, 47);
+}
