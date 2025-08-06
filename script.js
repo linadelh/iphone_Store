@@ -39,12 +39,19 @@ red.addEventListener("click" , function(){
 });
 
 
-   const boutonPanier = document.getElementById('panier');
+    const boutonPanier = document.getElementById('panier');
     const panierDiv = document.getElementById('mon-panier');
 
     boutonPanier.addEventListener('click', function(e) {
         panierDiv.style.display = panierDiv.style.display === 'block' ? 'none' : 'block';
     });
+
+    document.addEventListener('click', function(e) {
+    // Vérifie si le clic n'était ni sur le bouton, ni dans le panier
+    if (!panierDiv.contains(e.target) && !boutonPanier.contains(e.target)) {
+        panierDiv.style.display = 'none';
+    }
+});
 
 
     
@@ -108,7 +115,7 @@ red.addEventListener("click" , function(){
    const liClose = document.createElement("li");
    liClose.innerHTML = `<i class="fa-solid fa-xmark fermer-panier" style="cursor: pointer;"></i>`;
 
-
+    produitUL.setAttribute("data-nom" , name); 
 
     produitUL.appendChild(liImage);
     produitUL.appendChild(liName);
@@ -127,18 +134,18 @@ red.addEventListener("click" , function(){
     if (e.target.classList.contains("fermer-panier")) {
         const ul = e.target.closest("ul");
         if (ul) {
-
-            const nom = ul.getAttribute("data-nom");
-             const toutesLesCards = document.querySelectorAll(".card");
-            toutesLesCards.forEach(card => {
-                const nomCard = card.querySelector(".phone-name").textContent;
-                if (nomCard === nom) {
-                    const icon = card.querySelector(".ajouter-panier i");
-                    icon.classList.remove("fa-circle-check");
-                    icon.classList.add("fa-cart-shopping");
-                }
-            });
-            ul.remove(); 
+ 
+          const nom = ul.getAttribute("data-nom");
+          const card = document.querySelectorAll(".card");
+          card.forEach((car)=>{
+               const productname = car.querySelector(".phone-name").textContent ;
+               if(nom === productname){
+                const icon = car.querySelector(".ajouter-panier i");
+                icon.classList.remove("fa-circle-check");
+                icon.classList.add("fa-cart-shopping");
+               }
+          })
+            ul.remove();
         }
     }
 });
