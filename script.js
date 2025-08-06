@@ -46,13 +46,19 @@ red.addEventListener("click" , function(){
         panierDiv.style.display = panierDiv.style.display === 'block' ? 'none' : 'block';
     });
 
-    document.addEventListener('click', function(e) {
-    // Vérifie si le clic n'était ni sur le bouton, ni dans le panier
-    if (!panierDiv.contains(e.target) && !boutonPanier.contains(e.target)) {
-        panierDiv.style.display = 'none';
-    }
-});
+   panierDiv.addEventListener("click" , function(e){
+       e.stopPropagation();
+   });
 
+   
+   document.addEventListener("click" , function(e){
+
+
+    if (!panierDiv.contains(e.target) && !boutonPanier.contains(e.target)){
+      panierDiv.style.display="none"; 
+    }
+   }
+  )
 
     
     let btn = document.querySelectorAll(".ajouter-panier");
@@ -134,18 +140,20 @@ red.addEventListener("click" , function(){
     if (e.target.classList.contains("fermer-panier")) {
         const ul = e.target.closest("ul");
         if (ul) {
- 
-          const nom = ul.getAttribute("data-nom");
-          const card = document.querySelectorAll(".card");
-          card.forEach((car)=>{
-               const productname = car.closest(".phone-name").textContent ;
-               if(nom === productname){
-                const icon = car.querySelector(".ajouter-panier i");
-                icon.classList.remove("fa-circle-check");
-                icon.classList.add("fa-cart-shopping");
-               }
-          })
+            const nom = ul.getAttribute("data-nom");
+            const card = document.querySelectorAll(".card");
+            card.forEach((car) => {
+                const productname = car.querySelector(".phone-name") ;
+                   if (!productname) return;
+                const nomduproduit = productname.textContent;
+                if (nom === nomduproduit) {
+                    const icon = car.querySelector(".ajouter-panier i");
+                    icon.classList.remove("fa-circle-check");
+                    icon.classList.add("fa-cart-shopping");
+                }
+            });
             ul.remove();
         }
     }
 });
+
