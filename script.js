@@ -157,3 +157,20 @@ red.addEventListener("click" , function(){
     }
 });
 
+
+const phone = document.querySelectorAll(".fa-phone");
+const tel = document.querySelector(".appeller");
+const p = document.querySelectorAll(".call p ");
+
+phone.forEach((call)=>{
+  call.addEventListener("click" , function(){
+     tel.style.display = tel.style.display === "none" ? "block":"none"
+  })
+})
+
+p.forEach((para)=>{
+  para.addEventListener("click" , function(){
+     tel.style.display = tel.style.display === "none" ? "block":"none"
+  });
+})
+
