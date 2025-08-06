@@ -158,19 +158,49 @@ red.addEventListener("click" , function(){
 });
 
 
-const phone = document.querySelectorAll(".fa-phone");
-const tel = document.querySelector(".appeller");
-const p = document.querySelectorAll(".call p ");
 
-phone.forEach((call)=>{
-  call.addEventListener("click" , function(){
+const tel = document.querySelector(".appeller");
+const call = document.querySelectorAll(".call");
+
+// phone.forEach((call)=>{
+//   call.addEventListener("click" , function(){
+//      tel.style.display = tel.style.display === "none" ? "block":"none"
+//   })
+// })
+
+// p.forEach((para)=>{
+//   para.addEventListener("click" , function(){
+//      tel.style.display = tel.style.display === "none" ? "block":"none"
+//   });
+// })
+
+call.forEach((cal)=>{
+  cal.addEventListener("click" , function(){
      tel.style.display = tel.style.display === "none" ? "block":"none"
   })
 })
 
-p.forEach((para)=>{
-  para.addEventListener("click" , function(){
-     tel.style.display = tel.style.display === "none" ? "block":"none"
-  });
-})
+
+ 
+
+  const el1 = document.querySelector(".fa-viber");
+  const el2 = document.querySelector(".fa-whatsapp");
+  const el3 = document.querySelector(".fa-phone");
+
+document.addEventListener("click", function(e) {
+  const clickedOutside = ![...call].some((cal) => cal.contains(e.target));
+  if (clickedOutside && tel.style.display === "block" && !(el1.contains(e.target))  && !(el2.contains(e.target))  && !(el3.contains(e.target)) ) {
+    tel.style.display = "none";
+  }
+});
+
+
+  // <div class="appeller"> 
+  //                       <h1>Veuillez nous contacter ici</h1>
+  //                       <div class="contact-icons">
+  //                              <i class="fa-brands fa-viber"></i>
+  //                              <i class="fa-brands fa-whatsapp"></i>
+  //                              <i class="fa-solid fa-phone"></i>
+  //                       </div>
+  //                   </div>
 
