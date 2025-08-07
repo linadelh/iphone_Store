@@ -4,7 +4,7 @@
 *{
     margin : 0 ; 
     padding : 0 ;
-     font-family: "Poppins", sans-serif;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
      font-weight: 500;
      font-style: normal;
     
@@ -200,7 +200,7 @@ hr {
 
 .ton-panier {
     position: absolute;
-    width: 300px;
+    width: fit-content;
     background-color: rgb(255, 255, 255);
     box-shadow: 3px 12px 15px rgba(231, 227, 227, 0.2);
     display: none; /* masqué par défaut */
@@ -239,6 +239,7 @@ hr {
     padding: 15px;
     display: flex;
     align-items: center;
+    width: fit-content;
 }
 
 .ton-panier img {
@@ -551,7 +552,7 @@ hr {
     background-color: #bdbaba; ;
 }
 
-.fa-xmark {
+.appeller .fa-xmark {
     position: relative;
     left: 100%;
     top: -20px;
@@ -565,6 +566,9 @@ hr {
     margin-bottom: 5px;
     font-size: 40px;
     font-weight: 900;
+   color: rgb(46, 46, 46);
+   margin-bottom: 10px;
+   padding-left: 10px;
 }
 
      .feedbackcontainer{
@@ -666,12 +670,12 @@ hr {
       transition: opacity 0.5s ease, transform 0.5s ease;
   transform: scale(0.95);  /* ← effet léger de zoom arrière */
   animation: none; 
-    background-color: #dedede;
+    background-color: #f3f1f1;
     border: 0.5px solid #c8c7c7;
     padding-top: 80px;
     border-radius: 6px;
     font-size: 16px;
-    color: #6f6767;
+    color: #474545;
     margin-top: 30px;
     box-shadow: 0 4px 8px rgba(0, 128, 0, 0.1);
     text-align: center;
