@@ -204,3 +204,39 @@ document.addEventListener("click", function(e) {
   //                       </div>
   //                   </div>
 
+const rating = document.querySelectorAll(".rating-option");
+
+
+let selectedrating = 0 ; 
+rating.forEach((option)=> {
+
+  option.addEventListener("click" , function(){
+  selectedrating = option.getAttribute("data-value");
+      rating.forEach((click)=>{
+        click.classList.toggle('selected' , click.getAttribute("data-value")<=selectedrating)
+      })
+})
+})
+
+// const text = document.getElementsByTagName("textarea") ; 
+const submit = document.querySelector(".submit-btn");
+// const feed = document.querySelector(".feedback-container");
+const thanks = document.querySelector(".thank-you");
+const form = document.querySelector(".form")
+
+
+submit.addEventListener("click" , function(){
+  if(selectedrating === 0){
+   alert("veuillez mettre un avis") ;
+   return
+  }
+
+
+  form.style.display="none";
+  thanks.style.display="block";
+  thanks.style.animation = "none";
+  void thanks.offsetWidth; 
+
+  thanks.style.animation = "fadeInZoom 0.5s ease forwards";
+
+})
