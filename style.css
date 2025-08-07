@@ -12,6 +12,10 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
+    h1, h2, h3 {
+    font-size: 1.5rem; /* au lieu de 2.5rem ou plus */
+}
 }
 .container {
     background: black;
@@ -318,13 +322,17 @@ hr {
 
 
 .about {
-  width: 500px;
+  width: 400px;
   margin: 80px auto;
   padding: 30px;
   border-radius: 12px;
   font-family: Arial, sans-serif;
   background-color: white;
 
+}
+
+.about:hover{
+ transform: scale(1);
 }
 
 .aboutus {
@@ -379,10 +387,9 @@ hr {
 
     border-radius: 10px ;
     width: 40%;
-    padding-left: px;
     border-radius: 80%;
     border: 1px solid grey;
-    margin-left: 150px;
+    margin-left: 110px;
     
 }
 
@@ -402,15 +409,15 @@ hr {
 .aboutus ul li {
     padding-top: 10px ;
     text-align: center;
-    width: 70%;
+    width: 80%;
     border: 1px solid grey;
     height: fit-content;
-    margin: 5px;
     border-radius: 30px;
     font-weight: 700;
-    padding: 30px;
+    padding: 20px;
     background-color: #fffcfc;
     transition: 0.7s;
+    margin: 10px;
 }
 
 .aboutus ul li:hover{
@@ -431,7 +438,6 @@ hr {
 }
 
 
-/* From Uiverse.io by vinodjangid07 */ 
 .rating-card {
   width: 300px;
   height: fit-content ; 
