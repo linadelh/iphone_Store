@@ -17,22 +17,22 @@ The focus was on:
 ## Features
 
 - **Color selection**: Switch between different iPhone colors, updating the product image and background dynamically.
-  <img src="iphone1.png" alt="iPhone" width="200" />
-   <img src="iphone2.png" alt="iPhone" width="200" /> 
+  <img src="iphone1.png" alt="iPhone" width="500" />
+   <img src="iphone2.png" alt="iPhone" width="500" /> 
 - **Shopping cart**:  
   - Add/remove items.
   - Cart state saved in `localStorage` to persist after reload.  
   - Product icons reflect cart status.
-     <img src="panier.png" alt="iPhone" width="200" /> 
+     <img src="panier.png" alt="iPhone" width="500" /> 
 - **Product details persistence**: Store product name, image, and price in `localStorage`.
-   <img src="iphone3.png" alt="iPhone" width="200" /> 
+   <img src="iphone3.png" alt="iPhone" width="500" /> 
 - **Order simulation**:  
   - Submit email/phone to simulate purchase.  
   - Purchased items removed from cart.  
   - Local order history saved.  
 - **Contact panel toggle**: Show/hide contact icons for Viber, WhatsApp, and phone.  
 - **Rating system**: Save and restore product ratings.
-   <img src="feedback.png" alt="iPhone" width="200" /> 
+   <img src="feedback.png" alt="iPhone" width="500" /> 
 - **Feedback form**: Simple validation before submission.  
 - **Dynamic UI interactions**: Panels toggle, click outside to close, thank-you messages after actions.
 
