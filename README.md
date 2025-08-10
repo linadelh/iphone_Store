@@ -81,4 +81,4 @@ This is a learning project, not production-ready. It helped me:
 
 ---
 
-**PS:** Any suggestions for this mini project are welcome — don’t hesitate to share! 😊
+**PS:** Any suggestions for this mini project are welcome don’t hesitate to share! 
