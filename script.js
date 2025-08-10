@@ -165,18 +165,6 @@ red.addEventListener("click" , function(){
 const tel = document.querySelector(".appeller");
 const call = document.querySelectorAll(".call");
 
-// phone.forEach((call)=>{
-//   call.addEventListener("click" , function(){
-//      tel.style.display = tel.style.display === "none" ? "block":"none"
-//   })
-// })
-
-// p.forEach((para)=>{
-//   para.addEventListener("click" , function(){
-//      tel.style.display = tel.style.display === "none" ? "block":"none"
-//   });
-// })
-
 call.forEach((cal)=>{
   cal.addEventListener("click" , function(){
      tel.style.display = tel.style.display === "none" ? "block":"none"
@@ -246,9 +234,13 @@ submit.addEventListener("click" , function(){
 
 
 const cart = document.querySelector(".achete-container");
-
+let currentproduct = null;
 panierDiv.addEventListener("click" , function(e){
     if(e.target.classList.contains("acheter")){
+         const ul = e.target.closest("ul");
+         if(ul){
+         currentproduct = ul.getAttribute("data-nom");
+         }
          cart.style.display = cart.style.display === "none" ? "flex" : "none" ; 
     }
 });
@@ -275,10 +267,28 @@ envoyer.addEventListener("click" , function(e){
     if (emailuser.value ==="" && phoneuser.value ===""){
       alert("Please enter your information this is a required field");
     }else{
-    cart.style.display = cart.style.display === "none" ? "flex" : "none" ;  
+      
+      if (currentproduct){
+        const ul = document.querySelector(`ul[data-nom="${currentproduct}"]`);
+        if(ul){
+          const produit = document.querySelectorAll(".card");
+          produit.forEach((pro)=>{
+             const product = pro.querySelector(".phone-name");
+             if(!product)return;
+             const nameofproduct = product.textContent ; 
+             if (nameofproduct === currentproduct){
+               const icon = pro.querySelector(".ajouter-panier i");
+               icon.classList.remove("fa-circle-check");
+               icon.classList.add("fa-cart-shopping");
+             }
+          })
+          ul.remove();
+        }
+        currentproduct = null; 
+      }
+   cart.style.display = cart.style.display === "none" ? "flex" : "none" ;  
    merci.style.display = merci.style.display === "flex" ? "none":"flex" ; 
     }
-    
 });
 
 document.addEventListener("click" , function(e){
@@ -289,3 +299,25 @@ document.addEventListener("click" , function(e){
   }
 })
 
+// const sup = document.getElementById("mon-panier");
+
+//  sup.addEventListener("click", function(e) {
+//     if (e.target.classList.contains("fermer-panier")) {
+//         const ul = e.target.closest("ul");
+//         if (ul) {
+//             const nom = ul.getAttribute("data-nom");
+//             const card = document.querySelectorAll(".card");
+//             card.forEach((car) => {
+//                 const productname = car.querySelector(".phone-name") ;
+//                    if (!productname) return;
+//                 const nomduproduit = productname.textContent;
+//                 if (nom === nomduproduit) {
+//                     const icon = car.querySelector(".ajouter-panier i");
+//                     icon.classList.remove("fa-circle-check");
+//                     icon.classList.add("fa-cart-shopping");
+//                 }
+//             });
+//             ul.remove();
+//         }
+//     }
+// });
