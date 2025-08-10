@@ -2,50 +2,56 @@
 
 ## Overview
 
-This is a **mini frontend e-commerce app** built to enforce my skills in **JavaScript**, **DOM manipulation**, and **CSS styling**.  
-It simulates core online store interactions but is purely frontend ( no backend or real transactions involved ) 
+This is a **mini frontend e-commerce app** designed to sharpen my skills in **JavaScript**, **DOM manipulation**, and **CSS styling**.  
+It simulates core online store interactions but is purely frontend — no backend or real transactions involved.
 
-The focus was on:
+### Key focus areas:
 
-- Mastering the **DOM API** for dynamic page updates.
-- Structuring an HTML page into logical sections.
-- Styling with **CSS** for a clean and responsive layout.
-- Managing app state with **localStorage** to persist data.
+- Mastering the **DOM API** for dynamic page updates  
+- Structuring HTML into logical sections  
+- Styling with **CSS** for a clean, responsive layout  
+- Managing app state with **localStorage** for data persistence  
 
 ---
 
 ## Features
 
-- **Color selection**: Switch between different iPhone colors, updating the product image and background dynamically.
+- **Color selection**  
+  Switch between iPhone colors, updating product images and backgrounds dynamically.
 
+  ![iPhone Color 1](iphone1.png){ width=500px }  
+  ![iPhone Color 2](iphone2.png){ width=500px }
 
-   <img src="iphone1.png" alt="iPhone" width="500" />
-   <br> 
-   <img src="iphone2.png" alt="iPhone" width="500" />
-  
-- **Shopping cart**:  
-  - Add/remove items.
-  - Cart state saved in `localStorage` to persist after reload.  
-  - Product icons reflect cart status.
-    
-     <img src="panier.png" alt="iPhone" width="500" />
-     
-    
-- **Product details persistence**: Store product name, image, and price in `localStorage`.
-   <img src="iphone3.png" alt="iPhone" width="500" /> 
-- **Order simulation**:  
-  - Submit email/phone to simulate purchase.  
-  - Purchased items removed from cart.  
-  - Local order history saved.  
-- **Contact panel toggle**: Show/hide contact icons for Viber, WhatsApp, and phone.  
-- **Rating system**: Save and restore product ratings.
+- **Shopping cart**  
+  - Add and remove items  
+  - Cart state saved in `localStorage` to persist across reloads  
+  - Product icons reflect cart status
 
-  
-   <img src="feedback.png" alt="iPhone" width="500" />
+  ![Shopping Cart](panier.png){ width=500px }
 
-  
-- **Feedback form**: Simple validation before submission.  
-- **Dynamic UI interactions**: Panels toggle, click outside to close, thank-you messages after actions.
+- **Product details persistence**  
+  Stores product name, image, and price in `localStorage`.
+
+  ![Product Details](iphone3.png){ width=500px }
+
+- **Order simulation**  
+  - Submit email/phone to simulate purchase  
+  - Purchased items removed from cart  
+  - Local order history saved
+
+- **Contact panel toggle**  
+  Show/hide contact icons for Viber, WhatsApp, and phone.
+
+- **Rating system**  
+  Save and restore product ratings.
+
+  ![Feedback](feedback.png){ width=500px }
+
+- **Feedback form**  
+  Simple validation before submission.
+
+- **Dynamic UI interactions**  
+  Panels toggle, click outside to close, thank-you messages after actions.
 
 ---
 
@@ -61,8 +67,8 @@ The focus was on:
 
 This is a learning project, not production-ready. It helped me:
 
-- Break down UI into functional components.  
-- Deepen understanding of DOM events and element manipulation.  
+- Break down UI into functional components  
+- Deepen understanding of DOM events and manipulation  
 - Build clean, maintainable JavaScript for real UI features
 
 ---
@@ -74,6 +80,5 @@ This is a learning project, not production-ready. It helped me:
 3. Explore: change colors, manage cart, submit ratings, simulate orders.
 
 ---
-** ps : Any suggestions for this mini project are welcome—don’t hesitate to share! :) **
 
----
+**PS:** Any suggestions for this mini project are welcome — don’t hesitate to share! 😊
