@@ -121,12 +121,16 @@ red.addEventListener("click" , function(){
    const liClose = document.createElement("li");
    liClose.innerHTML = `<i class="fa-solid fa-xmark fermer-panier" style="cursor: pointer;"></i>`;
 
+   const libuy = document.createElement("li");
+   libuy.innerHTML =`<i class="fa-solid fa-credit-card acheter" style="cursor:pointer;"></i>`;
+
     produitUL.setAttribute("data-nom" , name); 
 
     produitUL.appendChild(liImage);
     produitUL.appendChild(liName);
     produitUL.appendChild(liPrice);
     produitUL.appendChild(liClose);
+    produitUL.appendChild(libuy);
 
     panierDiv.appendChild(produitUL);
 
@@ -156,7 +160,6 @@ red.addEventListener("click" , function(){
         }
     }
 });
-
 
 
 const tel = document.querySelector(".appeller");
@@ -240,3 +243,49 @@ submit.addEventListener("click" , function(){
   thanks.style.animation = "fadeInZoom 0.5s ease forwards";
 
 })
+
+
+const cart = document.querySelector(".achete-container");
+
+panierDiv.addEventListener("click" , function(e){
+    if(e.target.classList.contains("acheter")){
+         cart.style.display = cart.style.display === "none" ? "flex" : "none" ; 
+    }
+});
+
+
+document.addEventListener("click", function(e) {
+  if (!cart.contains(e.target)) {
+    if (getComputedStyle(cart).display !== "none") {
+      cart.style.display = "none";
+    }
+  }
+});
+
+
+
+const envoyer = document.getElementById("btn");
+const merci = document.querySelector(".thanks");
+const thanku = document.querySelector(".thanks i");
+
+envoyer.addEventListener("click" , function(e){
+    const emailuser = document.getElementById("emailuser");
+    const phoneuser = document.getElementById("phoneuser"); 
+    
+    if (emailuser.value ==="" && phoneuser.value ===""){
+      alert("Please enter your information this is a required field");
+    }else{
+    cart.style.display = cart.style.display === "none" ? "flex" : "none" ;  
+   merci.style.display = merci.style.display === "flex" ? "none":"flex" ; 
+    }
+    
+});
+
+document.addEventListener("click" , function(e){
+  if(thanku.contains(e.target)){
+     if (getComputedStyle(merci).display !== "none") {
+      merci.style.display = "none";
+    }
+  }
+})
+

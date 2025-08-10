@@ -323,7 +323,7 @@ hr {
 
 
 .about {
-  width: 400px;
+  width: 900px;
   margin: 80px auto;
   padding: 30px;
   border-radius: 12px;
@@ -351,7 +351,7 @@ hr {
 }
 
 .aboutus .info {
-  font-size: 16px;
+  font-size: 13px;
   color: #555;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -373,11 +373,12 @@ hr {
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
-  background-color: #b3b4b4;
+  background-color: #eaeaea;
   border-radius: 5px;
   cursor: pointer;
   color: black;
   font-size: 800;
+  transition: 0.7s ;
 }
 
 .aboutus button:hover {
@@ -390,14 +391,13 @@ hr {
     width: 40%;
     border-radius: 80%;
     border: 1px solid grey;
-    margin-left: 110px;
+    margin-left: 80px;
     
 }
 
 .aboutus ul {
 
   list-style-type: none;
-  padding-left: 10px;
   color: #252222;
   font-size: 16px;
   line-height: 1.6;
@@ -409,7 +409,6 @@ hr {
 
 .aboutus ul li {
     padding-top: 10px ;
-    text-align: center;
     width: 80%;
     border: 1px solid grey;
     height: fit-content;
@@ -711,3 +710,82 @@ hr {
             background-color: #eee;
             margin: 25px 0;
         }
+
+        .achete-container{
+          background-color: #edeef0;
+          width: 350px;
+          padding: 60px;
+          border-radius: 20px;
+          display: none ;
+          align-items: center;
+          justify-content: center;
+          height: 180px;
+          padding: auto;
+          position: absolute ;
+          margin-top: 500px;
+          margin-left: 300px ;
+
+        }
+
+        .achete-container p {
+          padding: 10px;
+          margin-left: -5px;
+          font-size: 20px;
+          text-align: center;
+          font-weight: 600;
+          margin-top: 30px;
+          
+        }
+
+        .achete-container input {
+              padding: 10px;
+              margin-left:0px;
+              margin-top: 20px;
+              width: 300px;
+              border-radius: 20px;
+              border: 0.2px solid rgb(167, 166, 166);
+        }
+
+        .achete-container button {
+          margin: 20px;
+          margin-left: 90%;
+          margin-top: 5%;
+          padding: 10px;
+          border-radius: 40px;
+          border: none;
+          cursor: pointer;
+          transition: 0.7s;
+        }
+
+        .achete-container button:hover {
+          background-color: #afacac;
+        }
+
+
+      .thanks {
+    background-color: #edeef0;
+    width: 350px;
+    padding: 60px;
+    border-radius: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    padding: auto;
+    position: absolute;
+    margin-top: 500px;
+    margin-left: 300px;
+   box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+   text-align: center;
+      }
+
+      .thanks i {
+        position: absolute;
+        top: 20%;
+        left: 90%;
+        cursor: pointer ;
+      }
+
+
+      
+      
