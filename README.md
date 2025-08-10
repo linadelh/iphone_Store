@@ -19,20 +19,20 @@ It simulates core online store interactions but is purely frontend — no backen
 - **Color selection**  
   Switch between iPhone colors, updating product images and backgrounds dynamically.
 
- <img src="iphone1.png" alt="iPhone" width="400" /> 
- <img src="iphone2.png" alt="iPhone" width="400" /> 
+ <img src="iphone1.png" alt="iPhone" width="450" /> 
+ <img src="iphone2.png" alt="iPhone" width="450" /> 
 
 - **Shopping cart**  
   - Add and remove items  
   - Cart state saved in `localStorage` to persist across reloads  
   - Product icons reflect cart status
 
-  <img src="panier.png" alt="iPhone Preview" width="400" /> 
+  <img src="panier.png" alt="iPhone Preview" width="450" /> 
 
 - **Product details persistence**  
   Stores product name, image, and price in `localStorage`.
 
-  <img src="iphone3.png" alt="iPhone Preview" width="400" /> 
+  <img src="iphone3.png" alt="iPhone Preview" width="450" /> 
 
 - **Order simulation**  
   - Submit email/phone to simulate purchase  
@@ -45,7 +45,7 @@ It simulates core online store interactions but is purely frontend — no backen
 - **Rating system**  
   Save and restore product ratings.
 
-  <img src="feedback.png" alt="iPhone Preview" width="400" /> 
+  <img src="feedback.png" alt="iPhone Preview" width="450" /> 
 
 - **Feedback form**  
   Simple validation before submission.
