@@ -8,34 +8,90 @@ let mainphone = document.getElementById("main")
 let container = document.querySelectorAll(".container");
 
 
+
+let product = JSON.parse(localStorage.getItem('panierProducts')) || [];
+
+// 2. AJOUTER ces fonctions
+function saveCart() {
+    localStorage.setItem('panierProducts', JSON.stringify(product));
+}
+
+function saveSelectedColor(color, imagePath, backgroundColor) {
+    const colorData = {
+        color: color,
+        imagePath: imagePath,
+        backgroundColor: backgroundColor
+    };
+    localStorage.setItem('selectedColor', JSON.stringify(colorData));
+}
+
+function loadSelectedColor() {
+    const savedColor = JSON.parse(localStorage.getItem('selectedColor'));
+    if (savedColor) {
+        mainphone.src = savedColor.imagePath;
+        container.forEach((item) => {
+            item.style.background = savedColor.backgroundColor;
+        });
+    }
+}
+
+function loadCart() {
+    const productDetails = JSON.parse(localStorage.getItem('productDetails')) || {};
+    
+    product.forEach(productName => {
+        if (productDetails[productName]) {
+            ajouterpanier(productName, productDetails[productName].src, productDetails[productName].price);
+            
+            // Mettre à jour l'icône du produit correspondant
+            const cards = document.querySelectorAll(".card");
+            cards.forEach((card) => {
+                const productNameElement = card.querySelector(".phone-name");
+                if (productNameElement && productNameElement.textContent === productName) {
+                    const icon = card.querySelector(".ajouter-panier i");
+                    icon.classList.remove("fa-cart-shopping");
+                    icon.classList.add("fa-circle-check");
+                }
+            });
+        }
+    });
+}
+
+
+
+
 black.addEventListener("click" , function(){
     mainphone.src ="img/2.png" ; 
       container.forEach((item)=>
        item.style.background ="#2e2e2eff");
+      saveSelectedColor('black', 'img/2.png', '#2e2e2eff');
 });
 
 yellow.addEventListener("click" , function(){
     mainphone.src ="img/0.png" ; 
      container.forEach((item)=>
        item.style.background ="#000");
+      saveSelectedColor('yellow', 'img/0.png', '#000');
     
 });
 purple.addEventListener("click" , function(){
     mainphone.src ="img/1.png" ; 
        container.forEach((item)=>
        item.style.background ="#247eC8");
+       saveSelectedColor('purple', 'img/1.png', '#247eC8');
     
 });
 pink.addEventListener("click" , function(){
     mainphone.src ="img/3.png" ; 
       container.forEach((item)=>
        item.style.background ="#d7c4d1ff");
+      saveSelectedColor('pink', 'img/3.png', '#d7c4d1ff');
 });
 
 red.addEventListener("click" , function(){
     mainphone.src ="img/4.png" ; 
       container.forEach((item)=>
        item.style.background ="#c82525");
+      saveSelectedColor('red', 'img/4.png', '#c82525');
 });
 
 
@@ -62,13 +118,11 @@ red.addEventListener("click" , function(){
 
     
     let btn = document.querySelectorAll(".ajouter-panier");
-    let product = [] ; 
 
     btn.forEach((button)=>{
     button.addEventListener("click" , function(e){
        
         const card = e.target.closest(".card");
-
         const nom = card.querySelector(".phone-name").textContent;
 
         const imgsrc = card.querySelector("img").getAttribute('src');
@@ -93,6 +147,7 @@ red.addEventListener("click" , function(){
          if ( ! product.includes(nom)){
           product.push(nom);
           ajouterpanier(nom , imgsrc , prix);
+          saveCart(); 
          }
 
 
@@ -133,6 +188,9 @@ red.addEventListener("click" , function(){
     produitUL.appendChild(libuy);
 
     panierDiv.appendChild(produitUL);
+    const productDetails = JSON.parse(localStorage.getItem('productDetails')) || {};
+    productDetails[name] = { src, price };
+     localStorage.setItem('productDetails', JSON.stringify(productDetails));
 
 }
 
@@ -155,6 +213,15 @@ red.addEventListener("click" , function(){
                     icon.classList.remove("fa-circle-check");
                     icon.classList.add("fa-cart-shopping");
                 }
+                 const index = product.indexOf(nom);
+         if (index > -1) {
+    product.splice(index, 1);
+    saveCart();
+    
+    const productDetails = JSON.parse(localStorage.getItem('productDetails')) || {};
+    delete productDetails[nom];
+    localStorage.setItem('productDetails', JSON.stringify(productDetails));
+}
             });
             ul.remove();
         }
@@ -198,13 +265,14 @@ document.addEventListener("click", function(e) {
 const rating = document.querySelectorAll(".rating-option");
 
 
-let selectedrating = 0 ; 
+let selectedrating = parseInt(localStorage.getItem('selectedRating')) || 0;
 rating.forEach((option)=> {
 
   option.addEventListener("click" , function(){
-  selectedrating = option.getAttribute("data-value");
+    selectedrating = option.getAttribute("data-value");
+        localStorage.setItem('selectedRating', selectedrating.toString()); 
       rating.forEach((click)=>{
-        click.classList.toggle('selected' , click.getAttribute("data-value")<=selectedrating)
+        click.classList.toggle('selected' , click.getAttribute("data-value")<=selectedrating);
       })
 })
 })
@@ -267,7 +335,24 @@ envoyer.addEventListener("click" , function(e){
     if (emailuser.value ==="" && phoneuser.value ===""){
       alert("Please enter your information this is a required field");
     }else{
-      
+      const contactInfo = {
+    email: emailuser.value,
+    phone: phoneuser.value,
+    timestamp: new Date().toISOString()
+};
+
+const orderHistory = JSON.parse(localStorage.getItem('orderHistory')) || [];
+if (currentproduct) {
+    const order = {
+        product: currentproduct,
+        contact: contactInfo,
+        date: new Date().toISOString()
+    };
+    orderHistory.push(order);
+    localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+}
+
+localStorage.setItem('lastContactInfo', JSON.stringify(contactInfo));
       if (currentproduct){
         const ul = document.querySelector(`ul[data-nom="${currentproduct}"]`);
         if(ul){
@@ -282,6 +367,16 @@ envoyer.addEventListener("click" , function(e){
                icon.classList.add("fa-cart-shopping");
              }
           })
+
+          const index = product.indexOf(currentproduct);
+                if (index > -1) {
+                    product.splice(index, 1);
+                    saveCart();
+                    
+                    const productDetails = JSON.parse(localStorage.getItem('productDetails')) || {};
+                    delete productDetails[currentproduct];
+                    localStorage.setItem('productDetails', JSON.stringify(productDetails));
+                }
           ul.remove();
         }
         currentproduct = null; 
@@ -321,3 +416,26 @@ document.addEventListener("click" , function(e){
 //         }
 //     }
 // });
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadSelectedColor();
+    loadCart();
+    
+    // Charger la notation
+    if (selectedrating > 0) {
+        const rating = document.querySelectorAll(".rating-option");
+        rating.forEach((click) => {
+            click.classList.toggle('selected', parseInt(click.getAttribute("data-value")) <= selectedrating);
+        });
+    }
+    
+    // Charger les infos de contact
+    const savedContact = JSON.parse(localStorage.getItem('lastContactInfo'));
+    if (savedContact) {
+        const emailuser = document.getElementById("emailuser");
+        const phoneuser = document.getElementById("phoneuser");
+        
+        if (emailuser) emailuser.value = savedContact.email || '';
+        if (phoneuser) phoneuser.value = savedContact.phone || '';
+    }
+});
