@@ -20,7 +20,7 @@ The focus was on:
 
 
    <img src="iphone1.png" alt="iPhone" width="500" />
-
+   <br> 
    <img src="iphone2.png" alt="iPhone" width="500" />
   
 - **Shopping cart**:  
