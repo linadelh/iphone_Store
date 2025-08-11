@@ -178,10 +178,7 @@ red.addEventListener("click" , function(){
    libuy.innerHTML =`<i class="fa-solid fa-credit-card acheter" style="cursor:pointer;"></i>`;
 
     produitUL.setAttribute("data-nom" , name); 
-    const hr = document.createElement("hr");
-    hr.style.width ="100%";
-    hr.style.color ="grey";
-    hr.style.padding ="0px";
+   
     produitUL.appendChild(liImage);
     produitUL.appendChild(liName);
     produitUL.appendChild(liPrice);
@@ -189,7 +186,6 @@ red.addEventListener("click" , function(){
     produitUL.appendChild(libuy);
 
     panierDiv.appendChild(produitUL);
-    panierDiv.appendChild(hr);
     
     const productDetails = JSON.parse(localStorage.getItem('productDetails')) || {};
     productDetails[name] = { src, price };
@@ -446,4 +442,3 @@ document.addEventListener('DOMContentLoaded', function() {
     thanks.style.display = "block";
   }
 });
-

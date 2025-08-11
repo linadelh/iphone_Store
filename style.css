@@ -234,6 +234,9 @@ hr {
   justify-content: space-between;
   padding: 0;
   list-style: none;
+  border-bottom: 1px solid grey;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .ton-panier ul li {
