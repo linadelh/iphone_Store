@@ -11,7 +11,6 @@ let container = document.querySelectorAll(".container");
 
 let product = JSON.parse(localStorage.getItem('panierProducts')) || [];
 
-// 2. AJOUTER ces fonctions
 function saveCart() {
     localStorage.setItem('panierProducts', JSON.stringify(product));
 }
@@ -42,7 +41,6 @@ function loadCart() {
         if (productDetails[productName]) {
             ajouterpanier(productName, productDetails[productName].src, productDetails[productName].price);
             
-            // Mettre à jour l'icône du produit correspondant
             const cards = document.querySelectorAll(".card");
             cards.forEach((card) => {
                 const productNameElement = card.querySelector(".phone-name");
@@ -438,4 +436,5 @@ document.addEventListener('DOMContentLoaded', function() {
         if (emailuser) emailuser.value = savedContact.email || '';
         if (phoneuser) phoneuser.value = savedContact.phone || '';
     }
+
 });
