@@ -253,9 +253,11 @@ hr {
   color: black;
 }
 
+.headerpanier{
+  display: flex;
+  justify-content: space-between;
+}
 #title-panier {
-  margin-left: 0;
-  margin: auto;
   font-weight: 700;
   color: rgb(182, 119, 2);
 }
@@ -538,15 +540,17 @@ hr {
 
 .form {
   position: relative;
-  left: 30%;
+  left: 15%;
   background-color: white;
   border-radius: 2px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 40px;
-  width: 400px;
+  width: 800px;
   text-align: center;
   border: 1px solid #e0e0e0;
   height: 60%;
+  font-weight: 700;
+  box-shadow: (0,100px , 70px , rgb(0, 0, 0));
 }
 
 h1 {
@@ -555,6 +559,7 @@ h1 {
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 0.5px;
+  font-weight: bold;
 }
 
 .rating {
@@ -575,6 +580,7 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .rating-option:hover {
@@ -592,6 +598,7 @@ textarea {
   height: 120px;
   border: 1px solid #ddd;
   border-radius: 2px;
+  border-radius: 10px;
   padding: 15px;
   font-family: inherit;
   font-size: 14px;
@@ -599,6 +606,7 @@ textarea {
   margin-bottom: 25px;
   transition: all 0.3s;
   line-height: 1.6;
+  font-weight: bold;
 }
 
 textarea:focus {
@@ -611,12 +619,15 @@ textarea:focus {
   color: white;
   border: none;
   border-radius: 2px;
-  padding: 12px 30px;
+  padding: 12px 40px;
   font-size: 14px;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s;
   width: 100%;
+  border-radius: 20px;
+  margin-left: 10px;
+  
 }
 
 .submit-btn:hover {
