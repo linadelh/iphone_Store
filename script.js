@@ -330,7 +330,7 @@ envoyer.addEventListener("click" , function(e){
     const emailuser = document.getElementById("emailuser");
     const phoneuser = document.getElementById("phoneuser"); 
     
-    if (emailuser.value ==="" && phoneuser.value ===""){
+    if (emailuser.value ==="" || phoneuser.value ===""){
       alert("Please enter your information this is a required field");
     }else{
       const contactInfo = {
@@ -442,3 +442,13 @@ document.addEventListener('DOMContentLoaded', function() {
     thanks.style.display = "block";
   }
 });
+
+ document.querySelector('.newsletter-btn').addEventListener('click', function() {
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert('Merci pour votre inscription! Vous recevrez nos dernières offres.');
+                document.querySelector('.newsletter-input').value = '';
+            } else {
+                alert('Veuillez entrer une adresse email valide.');
+            }
+        });
