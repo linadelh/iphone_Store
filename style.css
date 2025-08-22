@@ -209,6 +209,17 @@ textarea:focus{outline:none;border-color:#999}
     max-width: 60px;
     cursor: pointer;
   }
+  .image {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  max-width: 100%; 
+}
+.image img {
+  width: 100%;
+  max-width: 400px; /* limite la taille max du téléphone */
+  height: auto;
+}
   
 }
 @media screen and (max-width: 768px) {
