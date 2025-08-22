@@ -41,7 +41,8 @@ hr{color:#000;width:115%}
 .call p{padding-left:11px}
 
 /* Section Titles */
-#Product{margin:90px 40% 5px;font-size:40px;font-weight:600}
+#Product{ margin: 90px auto 5px;
+  text-align: center;font-size:40px;font-weight:600}
 
 /* Shopping Cart */
 .ton-panier{position:absolute;width:fit-content;background:#fff;box-shadow:3px 12px 15px rgba(231,227,227,0.2);display:none;padding:20px;border-radius:5px;margin-top:300px;right:5%;max-height:300px;overflow-y:scroll}
@@ -65,8 +66,12 @@ hr{color:#000;width:115%}
 
 /* About Section */
 .bigcontact{margin-top:40px}
-.bigcontact h2{margin:90px 39% 5px;font-size:50px;font-weight:900;color:#fff}
-.about{width:900px;margin:80px auto;padding:30px;border-radius:12px;background:#fff}
+.bigcontact h2{margin:90px auto 5px;
+  text-align:center;
+font-size:50px;font-weight:900;color:#fff}
+.about{max-width: 100%;
+  width: 900px;  
+  box-sizing: border-box; margin: 40px auto;padding:30px;border-radius:12px;background:#fff}
 .aboutus span{display:block;font-size:26px;font-weight:bold;margin:30px 0 10px;color:#222}
 .aboutus .info{font-size:13px;color:#555;line-height:1.6;margin-bottom:20px}
 .aboutus button{margin-top:20px;padding:10px 20px;border:none;background:#eaeaea;border-radius:5px;cursor:pointer;font-weight:800;transition:.7s}
@@ -77,9 +82,12 @@ hr{color:#000;width:115%}
 .aboutus ul li:hover{transform:scale(1.1);background:#f5f2f2}
 
 /* Feedback Section */
-#feedbacktitle{margin:90px 40% 10px;font-size:40px;font-weight:900;color:#2e2e2e;padding-left:15px}
+#feedbacktitle{margin:90px auto 10px; /* centré automatiquement */
+  text-align:center;font-size:40px;font-weight:900;color:#2e2e2e;padding-left:15px}
 .feedbackcontainer{margin-bottom:40px;height:500px}
-.form{position:relative;left:15%;background:#fff;border-radius:2px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:40px;width:800px;text-align:center;border:1px solid #e0e0e0;height:60%;font-weight:700}
+.form{position:relative;left:15%;background:#fff;border-radius:2px;box-shadow:0 4px 12px rgba(0,0,0,0.08);padding:40px; max-width: 100%;
+  width: 800px;  margin: 40px ;
+  box-sizing: border-box;text-align:center;border:1px solid #e0e0e0;height:60%;font-weight:700}
 .rating{display:flex;justify-content:center;gap:15px;margin-bottom:30px}
 .rating-option{width:36px;height:36px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s ease;font-size:14px;font-weight:bold}
 .rating-option:hover{border-color:#999}
@@ -93,8 +101,11 @@ textarea:focus{outline:none;border-color:#999}
 .divider{height:1px;background:#eee;margin:25px 0}
 
 /* Purchase Forms */
-.achete-container{background:#edeef0;width:350px;padding:60px;border-radius:20px;display:none;align-items:center;justify-content:center;height:180px;position:absolute;margin:500px 0 0 300px}
-.achete-container p{padding:10px 0 0 -5px;font-size:20px;text-align:center;font-weight:600;margin-top:30px}
+.achete-container{background:#edeef0;width:90%;
+  max-width:350px;padding:60px;border-radius:20px;display:none;align-items:center;justify-content:center;height:auto;position:absolute;top:330%;       /* position au milieu vertical */
+  left:50%;      /* position au milieu horizontal */
+  transform:translate(-50%, -50%); /* recentrer */}
+.achete-container p{padding:10px 0 0 -5px;font-size:20px;text-align:center;font-weight:600;}
 .achete-container input{padding:10px;margin:20px 0 0 0;width:300px;border-radius:20px;border:.2px solid #a7a6a6}
 .achete-container button{margin:5% 0 20px 90%;padding:10px;border-radius:40px;border:none;cursor:pointer;transition:.7s}
 .achete-container button:hover{background:#afacac}
@@ -149,11 +160,52 @@ textarea:focus{outline:none;border-color:#999}
 .footer-logo{font-size:28px;font-weight:700;color:#9a9a9a;margin-bottom:15px;letter-spacing:2px}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width: 768px) {
+  #feedbacktitle, .bigcontact h2  .appeller .content p {
+    font-size: 28px;
+    margin: 40px auto 20px;
+  }
 
-@media (max-width:768px){
-.footer{padding:40px 0 20px}
-.footer-content{grid-template-columns:1fr;gap:30px}
-.newsletter-form{flex-direction:column}
-.newsletter-input{min-width:100%}
-.social-icons{justify-content:center}
+  .form {
+    width: 90%; /* au lieu de 800px */
+    left: -15px; /* supprime le décalage */
+  }
+
+  .about {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .appeller {
+    width: 70%;
+    text-align: center;
+  }
+
+  .appeller .contact-icons i  {
+    padding: 10px;
+  }
+
+  .content .text p {
+    text-align: left ;
+    max-width: 250px ;
+    padding: 10px ;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .achete-container, .thanks {
+    width:70%;
+    max-width:350px;
+    position:absolute;
+    margin:10px auto;
+    top:auto;
+    left: auto;
+    right: auto;
+    transform:none;
+    top: 60%;
+  }
+
+  .thanks {
+    top : 150%;
+  }
 }
