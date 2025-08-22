@@ -329,7 +329,7 @@ const thanku = document.querySelector(".thanks i");
 envoyer.addEventListener("click" , function(e){
     const emailuser = document.getElementById("emailuser");
     const phoneuser = document.getElementById("phoneuser"); 
-    
+    e.preventDefault();
     if (emailuser.value ==="" || phoneuser.value ===""){
       alert("Please enter your information this is a required field");
     }else{
