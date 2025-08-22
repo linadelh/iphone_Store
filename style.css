@@ -186,7 +186,7 @@ textarea:focus{outline:none;border-color:#999}
   }
 
   .content .text p {
-      text-align: center;     
+      text-align: left;     
   max-width: 90%;         
   margin: 0 auto;        
   padding: 10px 0;
