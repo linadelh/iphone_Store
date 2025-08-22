@@ -161,7 +161,7 @@ textarea:focus{outline:none;border-color:#999}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @media (max-width: 768px) {
-  #feedbacktitle, .bigcontact h2  .appeller .content p header .content {
+  #feedbacktitle, .bigcontact h2  .appeller .content p header .content .image{
     font-size: 28px;
     margin: 40px auto 20px;
   }
@@ -195,8 +195,19 @@ textarea:focus{outline:none;border-color:#999}
     margin: 0 5px;
   }
 
-  .content  icons{
+  .content  .icons{
+    display: flex ;
+    justify-content: center ;
     width: 100%;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .content .icons img {
+    max-width: 60px;
+    cursor: pointer;
   }
   
 }
