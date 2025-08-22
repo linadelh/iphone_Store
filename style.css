@@ -161,7 +161,7 @@ textarea:focus{outline:none;border-color:#999}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @media (max-width: 768px) {
-  #feedbacktitle, .bigcontact h2  .appeller .content p header .content .image{
+  #feedbacktitle, .bigcontact h2  .appeller .content p header .content .image .icons{
     font-size: 28px;
     margin: 40px auto 20px;
   }
@@ -186,16 +186,19 @@ textarea:focus{outline:none;border-color:#999}
   }
 
   .content .text p {
-    text-align: left ;
-    max-width: 250px ;
-    padding: 10px ;
+      text-align: center;     
+  max-width: 90%;         
+  margin: 0 auto;        
+  padding: 10px 0;
+  font-size: 16px;      
+  line-height: 1.5;   
   }
   header {
     min-width: 100% ;
     margin: 0 5px;
   }
 
-  .content  .icons{
+  .icons{
     display: flex ;
     justify-content: center ;
     width: 100%;
@@ -205,7 +208,7 @@ textarea:focus{outline:none;border-color:#999}
     overflow-x: auto;
   }
 
-  .content .icons img {
+  .icons img {
     max-width: 60px;
     cursor: pointer;
   }
