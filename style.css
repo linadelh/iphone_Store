@@ -161,7 +161,7 @@ textarea:focus{outline:none;border-color:#999}
 
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @media (max-width: 768px) {
-  #feedbacktitle, .bigcontact h2  .appeller .content p {
+  #feedbacktitle, .bigcontact h2  .appeller .content p header .content {
     font-size: 28px;
     margin: 40px auto 20px;
   }
@@ -189,6 +189,14 @@ textarea:focus{outline:none;border-color:#999}
     text-align: left ;
     max-width: 250px ;
     padding: 10px ;
+  }
+  header {
+    min-width: 100% ;
+    margin: 0 5px;
+  }
+
+  .content  icons{
+    width: 100%;
   }
   
 }
