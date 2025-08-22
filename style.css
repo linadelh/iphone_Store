@@ -195,8 +195,6 @@ textarea:focus{outline:none;border-color:#999}
   }
   header {
     min-width: 100% ;
-    display: flex ;
-    justify-content: space-between;
   }
 
 
