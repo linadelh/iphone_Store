@@ -198,9 +198,7 @@ textarea:focus{outline:none;border-color:#999}
     display: flex ;
     justify-content: space-between;
   }
-  header ul {
-    padding : 10px; 
-  }
+
 
   .icons{
     display: flex ;
