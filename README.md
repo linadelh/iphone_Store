@@ -3,7 +3,7 @@
 ## Overview
 
 This is a **mini frontend e-commerce app** designed to sharpen my skills in **JavaScript**, **DOM manipulation**, and **CSS styling**.  
-It simulates core online store interactions but is purely frontend — no backend or real transactions involved.
+It simulates core online store interactions but is purely frontend no backend or real transactions involved.
 
 ### Key focus areas:
 
